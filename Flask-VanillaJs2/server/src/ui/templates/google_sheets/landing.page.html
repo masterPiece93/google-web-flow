@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block page_level_css %}
+<!-- CSS < Native to this Page > -->
+<style>
+    .sheet-data-container {
+        padding: 0.1em
+    }
+    .sheet-data-container > p {
+        border: 0.1em solid lightsteelblue;
+        border-left: none;
+        width: 35%;
+        background: black;
+        color: white;
+        padding: 0.2em;
+        font-family: emoji;
+
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    {% include 'title.component.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- navigate back button -->
+    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+        </svg>
+        <span class="sr-only">Back to Demonstartion Catalog</span>
+        <a style="margin-left: 0.1em;" href="{{url_for('ssr_ui.index')}}"> Back to Demonstartion Catalog</a>
+    </button>
+    <div>
+        <b><a href="{{url_for('ssr_ui.google-sheets.all_sheets_data_api_request')}}">All Data</a></b>
+    </div>
+{% endblock %}

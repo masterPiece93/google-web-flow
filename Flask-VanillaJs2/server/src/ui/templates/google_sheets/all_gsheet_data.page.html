@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block page_level_css %}
+<!-- CSS < Native to this Page > -->
+<style>
+    .sheet-data-container {
+        padding: 0.1em
+    }
+    .sheet-data-container > p {
+        border: 0.1em solid lightsteelblue;
+        border-left: none;
+        width: 35%;
+        background: black;
+        color: white;
+        padding: 0.2em;
+        font-family: emoji;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    {% include 'title.component.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- navigate back button -->
+    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+        </svg>
+        <span class="sr-only">Back to Google Sheets Catalog</span>
+        <a style="margin-left: 0.1em;" href="{{url_for('ssr_ui.google-sheets.index')}}"> Back to Google Sheets Catalog</a>
+    </button>
+    {% for sheet in data %}
+        
+        <div class="sheet-data-container relative overflow-x-auto">
+            <p>Sheet - {{loop.index}}</p>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        {% for column_name in sheet[0] %}
+                            <th scope="col" class="px-6 py-3">{{column_name}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in sheet[1:] %}
+                    <tr class="border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                        {% for value in item %}
+                        <td class="px-6 py-4">{{value}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+                
+            </table>
+        </div>
+        
+    {% endfor %}
+{% endblock %}

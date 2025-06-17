@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-in</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div id="g_id_onload"
+         data-client_id="510208681038-hm80uumja77rl5qtcgt05jasbqud03o1.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-login_uri="/google_auth"
+         data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+
+    <!-- JavaScript -->
+    <script> 
+    function handleCredentialResponse(response) {
+        fetch('/google_auth', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'id_token=' + response.credential
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('Login successful:', data.user);
+                // Handle successful login (e.g., redirect, update UI)
+                alert('Welcome, ' + data.user.name + '!');
+            } else {
+                console.error('Login failed:', data.message);
+                // Handle login failure (e.g., display error message)
+                alert('Login failed: ' + data.message);
+            }
+        });
+    }
+
+    var CLIENT_ID = "510208681038-hm80uumja77rl5qtcgt05jasbqud03o1.apps.googleusercontent.com"
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: CLIENT_ID,
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.querySelector(".g_id_signin"),
+        { theme: "outline", size: "large" }  // customization attributes
+      );
+      google.accounts.id.prompt(); // to display the One Tap dialog
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div style="display: flex;
+    align-items: center;
+    background: blanchedalmond;
+    padding: 0.1em;"
+>
+    <h1 style="text-align: center;
+        flex: 1;"
+    >
+        {{title}}
+    </h1>
+</div>
+
+
+<!-- How to use Components -->
+<!-- --------------------- -->
+{# 
+    {% extends 'template.html' %}
+    {% block content %}
+        {% if task == 'content1' %}
+            {% include 'content1.html' %}
+        {% endif %}
+        {% if task == 'content2' %}
+            {% include 'content2.html' %}
+        {% endif %}
+    {% endblock %} 
+#}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google SignIn</title>
+</head>
+<body>
+    {% if is_logged_in %}
+    <section>
+        <h2>Logged In</h2>
+        <div style="border: 1px solid;width: 22%;">
+            <p style="border: 0.1em solid;word-wrap: break-word;"><b>Email</b>: {{email}}</p>
+            <img style="width: 100%;" src="{{picture}}" />
+        </div>
+        <button onclick="window.location.href='/login'">
+            Re-Login with Google
+        </button>
+    </section>
+    {% else %}
+    <section>
+        <h2>Signed Out</h2>
+        <button onclick="window.location.href='/login'">
+            Login with Google
+        </button>
+    </section>
+    {% endif %}
+    
+</body>
+</html>
