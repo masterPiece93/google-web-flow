@@ -9,8 +9,8 @@ This repository deals in various authentication flows provided by google
 
 ## Flask-VanillaJs
 
-...
+[README](./Flask-VanillaJs/README.md)
 
 ## Flask-VanillaJs2
 
-...
+[README](./Flask-VanillaJs2/README.md)

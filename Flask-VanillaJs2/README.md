@@ -1,7 +1,5 @@
 # Client Server Auth
 
-> `TODO` : seggregate google-sheets implementation in a different blueprint . It is current registered as an endpoint-`/use` in the app.py file .
-
 > `TODO` : introduce docker compose to bind different services together
 
 > `TODO` : introduce nginx / caddy to host ui & backend .
@@ -14,7 +12,7 @@
 | Name | Description |
 | ---- | ----------- |
 | [Introduction](#introduction) | what is the usefulness and purpose of this project |
-| [Launch] | how to launch application on browser |
+| [Launch](#launch) | how to launch application on browser |
 | [Redis](#redis) | how redis is setip for this project |
 | [Outh App Conf](#oauth-app) | how to configure the Oauth app for google sign-in to work |
 
