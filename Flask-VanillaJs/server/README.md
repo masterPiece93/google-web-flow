@@ -131,6 +131,8 @@ make install
 
 ### How to do development
 
+> retrieve `.env` and `credentials.json` file from google-drive : _Personal Project Secrets_
+
 `TODO: PENDING`
 
 ### Container Setup

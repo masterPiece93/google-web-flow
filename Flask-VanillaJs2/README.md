@@ -28,6 +28,8 @@ That is why we have used `Flask-ApplicationDispatcher` approach with which we ar
 - doesn't uses `credentials.json` file .
     - only uses `client_id` and `client_secret` .
 
+> NOTE : retrieve `.env` and `credentials.json` file from google-drive : _Personal Project Secrets_
+
 ### Resorces 
 <em> what resources did i refer </em>
 
