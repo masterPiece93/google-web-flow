@@ -1,10 +1,19 @@
-# Client Server Auth
+Client Server Google Auth
+==========================
+This Project demonstrates the Google O-Auth flow in a client server architechture .
+
+<em style="font-size: 0.9em; color:lightblue;">[ There are many flows supported by google for authentication ]</em>
+
+- This app demonstrated the flow by using a `credentials.json` file.
+- The Oauth app configuration uses `Web Application` option .
+- The client is inside the server
+    - in this implementation , the client side is rendered from server itself .
+    - this is because :- for the google oauth flow to run , the domain must be same for both client and server .
+    - hence , for ease or demonstration, we have rendered the client side from within the server.
 
 > `TODO` : introduce docker compose to bind different services together
 
 > `TODO` : introduce nginx / caddy to host ui & backend .
-
-> `TODO`: put `exceptions.py`, `utilities.py` and `commandline.py` in Cookiecutter .
 
 
 ## `INDEX`
@@ -14,7 +23,7 @@
 | [Introduction](#introduction) | what is the usefulness and purpose of this project |
 | [Launch](#launch) | how to launch application on browser |
 | [Redis](#redis) | how redis is setip for this project |
-| [Outh App Conf](#oauth-app) | how to configure the Oauth app for google sign-in to work |
+| [Oauth App Conf](#oauth-app) | how to configure the Oauth app for google sign-in to work |
 
 ## Introduction
 

@@ -1,8 +1,9 @@
-Google Sheets Processing
-==========================
+Google Auth in Flask Server 
+============================
 
 This is a PoC demonstration of google sheets access and processing
 
+> TODO: change implementation & routes so as to utilize the client .
 
 ## Developer Zone
 
