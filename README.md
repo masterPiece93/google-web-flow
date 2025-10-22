@@ -14,3 +14,10 @@ This repository deals in various authentication flows provided by google
 ## Flask-VanillaJs2
 
 [README](./Flask-VanillaJs2/README.md)
+
+### GIT
+
+authenticate with GIT : 
+```sh
+gh auth login
+```
